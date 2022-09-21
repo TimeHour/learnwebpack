@@ -62,7 +62,7 @@ export default {
             this.newItem = '';
         }
     },
-    computed: {
+    computed: { // it turnes mongus to bruh
         doneItems(){
             return this.items.filter(item => item.done)
         },
