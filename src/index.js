@@ -1,4 +1,7 @@
-console.log('hello world');
+import './style.scss';
 
-import hello from './hello.js';
-hello.hello();
+import { createApp } from 'vue';
+
+import App from './App.vue';
+
+createApp(App).mount('#app');
