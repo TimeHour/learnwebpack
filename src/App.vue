@@ -11,36 +11,18 @@
             </p>
         </div>
     <div class="content">
-            <h1>All items</h1>
-            <ul>
-                <li v-for="item in items" :key="item.id">
-                    {{ item.name }}
-                    	<input type="checkbox" v-model="item.done">    
-                </li>
-            </ul>
-            
-            <h1>Done items</h1>
-            <ul>
-                <li v-for="item in doneItems" :key="item.id">
-                    {{ item.name }}
-                    	<input type="checkbox" v-model="item.done">    
-                </li>
-            </ul>
-
-            <h1>not done items</h1>
-            <ul>
-                <li v-for="item in notDoneItems" :key="item.id">
-                    {{ item.name }}
-                    	<input type="checkbox" v-model="item.done">    
-                </li>
-            </ul>
+            <item-list title="All Items" v-bind:items="items"></item-list>
+            <item-list title="Done Items" v-bind:items="items"></item-list>
+            <item-list title="Not Done Items" v-bind:items="items"></item-list>
         </div>
   </section>
 </div>
 </template>
 
 <script>
+import ItemList from './ItemList.vue';
 export default {
+  components: { ItemList },
     data(){
         return{
             name:"Martin Luberg",
