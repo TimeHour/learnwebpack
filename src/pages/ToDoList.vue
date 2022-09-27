@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import ItemList from './ItemList.vue';
+import ItemList from '../components/ItemList.vue';
 export default {
   components: { ItemList },
     data(){
