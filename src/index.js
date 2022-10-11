@@ -14,9 +14,11 @@ import Clicker from './pages/Clicker.vue';
 import Chuck from './pages/Chuck.vue';
 import RickAndMorty from './pages/RickAndMorty.vue';
 import corona from './pages/corona.vue';
+import Country from './pages/Country.vue'
 
 const routes = [
-    { path: '/', component: corona, name: 'corona' },  
+    { path: '/', component: corona, name: 'corona' },
+    { path: '/countries/:country', component: Country },  
     { path: '/rick and morty', component: RickAndMorty, name: 'Rick and Morty' },
     { path: '/Chuck', component: Chuck, name: 'Chuck' },
     { path: '/Clicker', component: Clicker, name: 'Clicker' },
