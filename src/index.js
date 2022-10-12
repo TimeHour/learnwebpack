@@ -15,9 +15,11 @@ import Chuck from './pages/Chuck.vue';
 import RickAndMorty from './pages/RickAndMorty.vue';
 import corona from './pages/corona.vue';
 import Country from './pages/Country.vue'
+import Map from './pages/Map.vue'
 
 const routes = [
-    { path: '/', component: corona, name: 'corona' },
+    { path: '/', component: corona, name: 'Corona' },
+    { path: '/map', component: Map, name: 'Map' },
     { path: '/countries/:country', component: Country },  
     { path: '/rick and morty', component: RickAndMorty, name: 'Rick and Morty' },
     { path: '/Chuck', component: Chuck, name: 'Chuck' },

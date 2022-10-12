@@ -4,21 +4,23 @@
 
 <script>
 import Chart from 'chart.js/auto';
+import { shallowRef } from 'vue';
 export default {
     props: ['data', 'labels'],
     mounted(){
         let canvas = this.$refs['myCanvas'];
         console.log(canvas);
-        this.chart = new Chart(canvas, {
+        this.chart = shallowRef(new Chart(canvas, {
             type: 'line',
             data: {
                 labels: this.labels,
                 datasets: [{
                     label: '# of Votes',
                     data: this.data,
+                    borderColor: '#BADA55',
                 }]
             },    
-        });
+        }));
     },
     data(){
         return {
@@ -26,10 +28,13 @@ export default {
         }
     },
     watch: {
-        data(newData, oldData){
-            console.log(this.chart.data.datasets[0].data)
+        data(newData){
             this.chart.data.datasets[0].data = newData;
-            this.chart.draw()
+            this.chart.update()
+        },
+        labels(newLabels){
+            this.chart.data.labels = newLabels;
+            this.chart.update();
         }
     }
 
