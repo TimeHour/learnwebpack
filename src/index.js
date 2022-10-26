@@ -17,9 +17,11 @@ import corona from './pages/corona.vue';
 import Country from './pages/Country.vue'
 import Map from './pages/Map.vue'
 import Game from './pages/Game.vue'
+import Chat from './pages/Chat.vue'
 
 const routes = [
-    { path: '/', component: Game, name: 'Game' },
+    { path: '/', component: Chat, name: 'Chat' },
+    { path: '/Game', component: Game, name: 'Game' },
     { path: '/Corona', component: corona, name: 'Corona' },
     { path: '/map', component: Map, name: 'Map' },
     { path: '/countries/:country', component: Country },  
