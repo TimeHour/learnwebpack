@@ -284,6 +284,15 @@ export default {
                 //     }
                 //     ]
             }));
+            navigator.geolocation.getCurrentPosition(position => {
+                console.log(position);
+                new google.maps.Marker({
+                    position: {lat: position.coords.latitude, lng: position.coords.latitude},
+                    map: this.map
+                });
+            });
+
+
             this.map.addListener("center_changed", () => {
                 clearTimeout(this.centerTimeout);
                 this.centerTimeout = setTimeout(()=> {
